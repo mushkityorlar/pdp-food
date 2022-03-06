@@ -27,5 +27,4 @@ public class PdpFoodApplication {
     public void scheduler() {
         System.out.println("Do you order for lunch?");
     }
-
 }

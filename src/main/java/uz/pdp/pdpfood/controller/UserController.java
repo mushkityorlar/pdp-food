@@ -83,5 +83,4 @@ public class UserController extends AbstractController<UserServiceImpl> {
     public void unblock(@PathVariable Long id) {
         service.unblock(id);
     }
-
 }
