@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/food_app?currentSchema=food
+    username: nodirbek
+    password: 123
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  banner:
+    image:
+      location: classpath:banner.txt
+server:
+  port: 8080
