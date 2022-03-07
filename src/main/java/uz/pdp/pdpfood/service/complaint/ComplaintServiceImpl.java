@@ -6,37 +6,55 @@ import uz.pdp.pdpfood.dto.complain.ComplainUpdateDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import uz.pdp.pdpfood.entity.complaint.Complaint;
+import uz.pdp.pdpfood.mapper.complaint.ComplaintMapper;
+import uz.pdp.pdpfood.repository.ComplaintRepository;
+import uz.pdp.pdpfood.service.AbstractService;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service("complaintService")
 @Slf4j
-@RequiredArgsConstructor
 @Transactional
-public class ComplaintServiceImpl implements ComplaintService {
+public class ComplaintServiceImpl extends AbstractService<ComplaintRepository, ComplaintMapper> implements ComplaintService {
+
+    public ComplaintServiceImpl(ComplaintRepository repository, ComplaintMapper mapper) {
+        super(repository, mapper);
+    }
+
     @Override
     public Long create(ComplainCreateDto createDto) {
-        return null;
+        log.info("saving complain {}", createDto.getText());
+        Complaint complaint = mapper.fromCreateDto(createDto);
+        repository.save(complaint);
+        return complaint.getId();
     }
 
     @Override
     public ComplainDto update(Long id, ComplainUpdateDto updateDto) {
-        return null;
+        Complaint complaint = mapper.fromUpdateDto(updateDto);
+        repository.save(complaint);
+        return mapper.toDto(complaint);
     }
 
     @Override
     public Void delete(Long id) {
+        repository.delete(id);
         return null;
     }
 
     @Override
     public List<ComplainDto> getAll() {
-        return null;
+        log.info("fetching all complains");
+        List<Complaint> complaints = repository.findAll();
+        return mapper.toDto(complaints);
     }
 
     @Override
     public ComplainDto get(Long id) {
-        return null;
+        Optional<Complaint> complaint = repository.findById(id);
+        return mapper.toDto(complaint.get());
     }
 }
