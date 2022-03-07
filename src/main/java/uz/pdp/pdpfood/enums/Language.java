@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public enum Language {
+public enum     Language {
     ENGLISH("en"),
     RUSSIAN("ru"),
     UZBEK("uz");

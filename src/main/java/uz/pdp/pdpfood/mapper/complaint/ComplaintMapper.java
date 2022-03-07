@@ -18,22 +18,14 @@ public interface ComplaintMapper extends BaseMapper<
         ComplainCreateDto,
         ComplainUpdateDto> {
     @Override
-    default ComplainDto toDto(Complaint complaint) {
-        return null;
-    }
+    ComplainDto toDto(Complaint complaint);
 
     @Override
-    default List<ComplainDto> toDto(List<Complaint> e) {
-        return null;
-    }
+    List<ComplainDto> toDto(List<Complaint> e);
 
     @Override
-    default Complaint fromCreateDto(ComplainCreateDto complainCreateDto) {
-        return null;
-    }
+    Complaint fromCreateDto(ComplainCreateDto complainCreateDto);
 
     @Override
-    default Complaint fromUpdateDto(ComplainUpdateDto d) {
-        return null;
-    }
+    Complaint fromUpdateDto(ComplainUpdateDto d);
 }

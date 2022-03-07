@@ -33,11 +33,11 @@ public class MainProcessor {
         long chatId = message.getChatId();
         User user = message.getFrom();
 
-       /* if (UserState.ORDER_MEAL.equals(state)) {
-            List<MealDto> mealDtos = mealService.getAllByDate(LocalDate.now().toString());
-            SendMessage sendMessage = messageObj(chatId, getDataMeals(mealDtos));
-            bot.executeMessage(sendMessage);
-        }*/
+//        if (UserState.ORDER_MEAL.equals(state)) {
+//            List<MealDto> mealDtos = mealService.getAllByDate(LocalDate.now().toString());
+//            SendMessage sendMessage = messageObj(chatId, getDataMeals(mealDtos));
+//            bot.executeMessage(sendMessage);
+//        }
 
     }
 

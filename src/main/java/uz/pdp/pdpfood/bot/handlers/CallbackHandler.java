@@ -75,7 +75,6 @@ public class CallbackHandler implements BaseHandler {
     }
 
     private void sendMessageToHead(long chatId, Message message) {
-        ;
         SendMessage sendMessage = messageObj(chatId, "Do you confirm this user " + message.getFrom().getUserName());
         sendMessage.setReplyMarkup(inlineBoards.forHeadButtons(message.getChatId()));
         bot.executeMessage(sendMessage);
