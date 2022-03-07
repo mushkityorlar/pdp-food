@@ -15,5 +15,4 @@ import java.time.LocalDate;
 public class MenuDto extends GenericDto {
     private LocalDate date = LocalDate.now();
     private Long mealId;
-
 }

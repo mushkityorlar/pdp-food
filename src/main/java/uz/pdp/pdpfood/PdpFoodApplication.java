@@ -3,10 +3,12 @@ package uz.pdp.pdpfood;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import uz.pdp.pdpfood.bot.PdpFoodBot;
 import uz.pdp.pdpfood.service.user.UserService;
 
 @EnableScheduling
@@ -19,7 +21,9 @@ public class PdpFoodApplication {
     private final UserService userService;
 
     public static void main(String[] args) {
-        SpringApplication.run(PdpFoodApplication.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(PdpFoodApplication.class, args);
+        PdpFoodBot telegramBotConfigurer = run.getBean(PdpFoodBot.class);
+        telegramBotConfigurer.run();
     }
 
 
