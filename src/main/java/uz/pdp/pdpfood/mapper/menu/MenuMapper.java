@@ -1,4 +1,4 @@
-package uz.pdp.pdpfood.mapper.meal;
+package uz.pdp.pdpfood.mapper.menu;
 
 import uz.pdp.pdpfood.dto.menu.MenuCreateDto;
 import uz.pdp.pdpfood.dto.menu.MenuDto;
@@ -18,22 +18,14 @@ public interface MenuMapper  extends BaseMapper<
         MenuCreateDto,
         MenuUpdateDto> {
     @Override
-    default MenuDto toDto(Menu menu) {
-        return null;
-    }
+    MenuDto toDto(Menu menu);
 
     @Override
-    default List<MenuDto> toDto(List<Menu> e) {
-        return null;
-    }
+    List<MenuDto> toDto(List<Menu> e);
 
     @Override
-    default Menu fromCreateDto(MenuCreateDto menuCreateDto) {
-        return null;
-    }
+    Menu fromCreateDto(MenuCreateDto menuCreateDto);
 
     @Override
-    default Menu fromUpdateDto(MenuUpdateDto d) {
-        return null;
-    }
+    Menu fromUpdateDto(MenuUpdateDto d);
 }

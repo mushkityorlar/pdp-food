@@ -1,20 +1,27 @@
 package uz.pdp.pdpfood;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import uz.pdp.pdpfood.bot.PdpFoodBot;
+import uz.pdp.pdpfood.properties.OpenApiProperties;
+import uz.pdp.pdpfood.properties.ServerProperties;
 import uz.pdp.pdpfood.service.user.UserService;
 
 @EnableScheduling
-@EnableSwagger2
 @SpringBootApplication
 @RequiredArgsConstructor
+@EnableConfigurationProperties({
+        OpenApiProperties.class,
+        ServerProperties.class
+})
+@OpenAPIDefinition
 public class PdpFoodApplication {
 
     private final PasswordEncoder passwordEncoder;

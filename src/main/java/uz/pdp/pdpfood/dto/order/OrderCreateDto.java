@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class OrderCreateDto implements Dto {
     private Long userId;
-    private Long mealID;
+    private Long mealId;
     private LocalDate date;
     private boolean receive;
 }

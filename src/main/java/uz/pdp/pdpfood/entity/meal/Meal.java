@@ -21,6 +21,6 @@ public class Meal extends Auditable {
     private String name;
     @Column(unique = true, nullable = false)
     private String image;
-    private boolean deleted;
+    private boolean deleted = false;
     private Long typeId;
 }

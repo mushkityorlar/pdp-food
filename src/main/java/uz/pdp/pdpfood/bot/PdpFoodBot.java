@@ -37,12 +37,12 @@ public class PdpFoodBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "5109675276:AAEztIPXXv3s1HW_ViHAGWdNhOCfXXB_F9Q";
+        return "5261867840:AAHsyqYzi9DwygsAs6Kat5rEFIbs8xlIBIE";
     }
 
     @Override
     public String getBotUsername() {
-        return "@pdp_foodbot";
+        return "@nodir_dot_common_bot";
     }
 
     public void executePhoto(SendPhoto sendPhoto) {

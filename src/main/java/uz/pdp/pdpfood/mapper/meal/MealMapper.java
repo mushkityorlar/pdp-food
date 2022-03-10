@@ -12,29 +12,21 @@ import java.util.List;
 
 @Component
 @Mapper(componentModel = "spring")
-public interface MealMapper  extends BaseMapper<
+public interface MealMapper extends BaseMapper<
         Meal,
         MealDto,
         MealCreateDto,
         MealUpdateDto> {
 
     @Override
-    default MealDto toDto(Meal meal) {
-        return null;
-    }
+    MealDto toDto(Meal meal);
 
     @Override
-    default List<MealDto> toDto(List<Meal> e) {
-        return null;
-    }
+    List<MealDto> toDto(List<Meal> e);
 
     @Override
-    default Meal fromCreateDto(MealCreateDto mealCreateDto) {
-        return null;
-    }
+    Meal fromCreateDto(MealCreateDto mealCreateDto);
 
     @Override
-    default Meal fromUpdateDto(MealUpdateDto d) {
-        return null;
-    }
+    Meal fromUpdateDto(MealUpdateDto d);
 }

@@ -1,4 +1,4 @@
-package uz.pdp.pdpfood.mapper.meal;
+package uz.pdp.pdpfood.mapper.order;
 
 import uz.pdp.pdpfood.dto.order.OrderCreateDto;
 import uz.pdp.pdpfood.dto.order.OrderDto;
@@ -18,22 +18,14 @@ public interface OrderMapper extends BaseMapper<
         OrderCreateDto,
         OrderUpdateDto> {
     @Override
-    default OrderDto toDto(Order order) {
-        return null;
-    }
+    OrderDto toDto(Order order);
 
     @Override
-    default List<OrderDto> toDto(List<Order> e) {
-        return null;
-    }
+    List<OrderDto> toDto(List<Order> e);
 
     @Override
-    default Order fromCreateDto(OrderCreateDto orderCreateDto) {
-        return null;
-    }
+    Order fromCreateDto(OrderCreateDto orderCreateDto);
 
     @Override
-    default Order fromUpdateDto(OrderUpdateDto d) {
-        return null;
-    }
+    Order fromUpdateDto(OrderUpdateDto d);
 }
